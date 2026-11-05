@@ -42,14 +42,14 @@ jobs:
       NAME: ${{ inputs.name || github.event.client_payload.name }}
       SILENT: ${{ inputs.silent || github.event.client_payload.silent || false }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           persist-credentials: false
 
       - name: Validate request
         run: scripts/validate.sh
 
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: ${{ env.REPO }}
           ref: ${{ env.REF }}
@@ -58,7 +58,7 @@ jobs:
           persist-credentials: false
           show-progress: false
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
 
