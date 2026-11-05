@@ -23,6 +23,7 @@
 | [shelve-knowledge](../.claude/skills/shelve-knowledge/SKILL.md) | 文書を作る、足す、動かす前 |
 | [write-adr](../.claude/skills/write-adr/SKILL.md) | 後から理由を辿れなくなる選択をする時 |
 | [close-notes](../.claude/skills/close-notes/SKILL.md) | 作業を閉じ、`notes/` に残り物がある時 |
+| [render-a-video](../.claude/skills/render-a-video/SKILL.md) | どのプロジェクトからでも、動画を書き出してリリースの URL を渡す時 |
 
 ## 関わる判断
 
