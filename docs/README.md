@@ -27,3 +27,4 @@
 
 - [ADR-0002](../adr/0002-adopt-shelved-documentation.md) — 知識を棚に分ける
 - [ADR-0003](../adr/0003-render-private-repos-on-a-public-repos-actions.md) — 非公開のリポジトリを公開のリポジトリの Actions で書き出す
+- [ADR-0004](../adr/0004-keep-only-the-procedures-claude-runs-here.md) — Claude がここでする作業の手順だけを置く
