@@ -16,16 +16,12 @@
 
 ## 手順
 
-手順は `.claude/skills/` にある。Claude はその時が来ると読み込み、人はファイルを読むか名前で呼ぶ。
+手順は `.claude/skills/` にある。
 
 | スキル | 始まる時 |
 |---|---|
 | [shelve-knowledge](../.claude/skills/shelve-knowledge/SKILL.md) | 文書を作る、足す、動かす前 |
 | [write-adr](../.claude/skills/write-adr/SKILL.md) | 後から理由を辿れなくなる選択をする時 |
-| [close-notes](../.claude/skills/close-notes/SKILL.md) | 作業を閉じ、`notes/` に残り物がある時 |
-| [request-a-render](../.claude/skills/request-a-render/SKILL.md) | 一本書き出し、リリースの mp4 を確かめる時 |
-| [add-a-render-source](../.claude/skills/add-a-render-source/SKILL.md) | 書き出す元のリポジトリを足す時 |
-| [renew-source-token](../.claude/skills/renew-source-token/SKILL.md) | `SOURCE_TOKEN` が切れた、切れそうな時。人が呼ぶ |
 
 ## 関わる判断
 
