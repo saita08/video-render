@@ -1,0 +1,73 @@
+name: render
+
+on:
+  workflow_dispatch:
+    inputs:
+      repo:
+        description: "Private repository to render from (must be listed in targets.txt)"
+        required: true
+        default: saita08/remotion-movie-studio
+      ref:
+        description: "Branch, tag, or commit"
+        required: true
+        default: main
+      composition:
+        description: "Composition id"
+        required: true
+      name:
+        description: "Output file name without .mp4"
+        required: true
+      silent:
+        description: "Also render a muted copy as <name>_silent.mp4"
+        type: boolean
+        default: false
+  repository_dispatch:
+    types: [render]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      REPO: ${{ inputs.repo || github.event.client_payload.repo }}
+      REF: ${{ inputs.ref || github.event.client_payload.ref || 'main' }}
+      COMPOSITION: ${{ inputs.composition || github.event.client_payload.composition }}
+      NAME: ${{ inputs.name || github.event.client_payload.name }}
+      SILENT: ${{ inputs.silent || github.event.client_payload.silent || false }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Validate request
+        run: scripts/validate.sh
+
+      - uses: actions/checkout@v4
+        with:
+          repository: ${{ env.REPO }}
+          ref: ${{ env.REF }}
+          token: ${{ secrets.SOURCE_TOKEN }}
+          path: source
+          persist-credentials: false
+          show-progress: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Render
+        run: scripts/render.sh
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: scripts/publish.sh
