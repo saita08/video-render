@@ -2,7 +2,9 @@
 
 非公開のリポジトリにある Remotion の動画を GitHub Actions で書き出し、このリポジトリのリリースに置く。書き出しだけをする公開のリポジトリで、動画のコードはここに無い。
 
-使い方は [docs/render.md](docs/render.md)。
+remotion-movie-studio（非公開）で作った動画を人に見せる時の出口として使う。Claude がワークフローを手で走らせ、出来たリリースの URL を渡す。AI の依頼への渡し方は [saita08/ai-talk](https://github.com/saita08/ai-talk) の決まりに従い、ここでは決めない。
+
+頼み方と出てくる物は [docs/render.md](docs/render.md)、手順は [docs/README.md](docs/README.md) の手順の表。
 
 ## ドキュメント
 
