@@ -28,7 +28,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: render
+  group: render-${{ inputs.name || github.event.client_payload.name }}
   cancel-in-progress: false
 
 jobs:
