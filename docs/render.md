@@ -4,7 +4,7 @@
 
 ## 頼み方
 
-ワークフロー `render`（[.github/workflows/render.yml](../.github/workflows/render.yml)）を、次のどちらかで走らせる。走らせて確かめる手順はスキル [request-a-render](../.claude/skills/request-a-render/SKILL.md)。どちらもこのリポジトリへの書き込みの権限が要る。
+ワークフロー `render`（[.github/workflows/render.yml](../.github/workflows/render.yml)）を、次のどちらかで走らせる。どちらもこのリポジトリへの書き込みの権限が要る。
 
 - `workflow_dispatch`: Actions の画面、`gh workflow run render -R saita08/video-render -f composition=<id> -f name=<名前>`、GitHub の MCP の `actions_run_trigger`。
 - `repository_dispatch`: 型は `render`、`client_payload` に同じ名前の値を入れる。
@@ -38,6 +38,6 @@
 
 ## トークン
 
-`SOURCE_TOKEN` は fine-grained personal access token で、Repository access は targets.txt のリポジトリだけ、Permissions は Contents の Read-only だけ（Metadata の Read-only は自動で付く）。このリポジトリの Settings、Secrets and variables、Actions に置く。targets.txt とトークンの Repository access は同じリポジトリを並べる。足す手順はスキル [add-a-render-source](../.claude/skills/add-a-render-source/SKILL.md)。
+`SOURCE_TOKEN` は fine-grained personal access token で、Repository access は targets.txt のリポジトリだけ、Permissions は Contents の Read-only だけ（Metadata の Read-only は自動で付く）。このリポジトリの Settings、Secrets and variables、Actions に置く。書き出す元を足す時は、targets.txt に一行足し、トークンの Repository access にも足す。
 
-トークンには期限がある。期限はトークンの設定の画面で見て、ここには書かない。切れると書き出しが元の checkout で落ちる。作り直す手順はスキル [renew-source-token](../.claude/skills/renew-source-token/SKILL.md)。
+トークンには期限がある。期限はトークンの設定の画面で見て、ここには書かない。切れると書き出しが元の checkout で落ちるので、同じ範囲と権限で作り直し、Secrets の値を替える。
