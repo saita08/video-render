@@ -22,9 +22,9 @@
 |---|---|
 | [shelve-knowledge](../.claude/skills/shelve-knowledge/SKILL.md) | 文書を作る、足す、動かす前 |
 | [write-adr](../.claude/skills/write-adr/SKILL.md) | 後から理由を辿れなくなる選択をする時 |
+| [close-notes](../.claude/skills/close-notes/SKILL.md) | 作業を閉じ、`notes/` に残り物がある時 |
 
 ## 関わる判断
 
 - [ADR-0002](../adr/0002-adopt-shelved-documentation.md) — 知識を棚に分ける
 - [ADR-0003](../adr/0003-render-private-repos-on-a-public-repos-actions.md) — 非公開のリポジトリを公開のリポジトリの Actions で書き出す
-- [ADR-0004](../adr/0004-keep-only-the-procedures-claude-runs-here.md) — Claude がここでする作業の手順だけを置く

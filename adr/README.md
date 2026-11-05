@@ -22,6 +22,5 @@
 | # | タイトル | 状態 |
 |---|---|---|
 | [0001](0001-record-architecture-decisions.md) | Record architecture decisions | Accepted |
-| [0002](0002-adopt-shelved-documentation.md) | Adopt the shelved documentation contract | Amended by [0004](0004-keep-only-the-procedures-claude-runs-here.md) |
+| [0002](0002-adopt-shelved-documentation.md) | Adopt the shelved documentation contract | Accepted |
 | [0003](0003-render-private-repos-on-a-public-repos-actions.md) | Render private repos on a public repo's Actions | Accepted |
-| [0004](0004-keep-only-the-procedures-claude-runs-here.md) | Keep only the procedures Claude runs here | Accepted |
